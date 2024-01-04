@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "./form.css";
 const Form = (props) => {
     const data=[]
@@ -8,8 +8,6 @@ const Form = (props) => {
   const [orderid, setOrderid] = useState("");
   const addItem = (event) => {
     event.preventDefault();
-    
-    console.log(" add item rrunning", price, name, orderid);
     const dataObj = {
       price: price,
      description: name,

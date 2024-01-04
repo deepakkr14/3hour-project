@@ -1,23 +1,20 @@
 import Form from './component/form '
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 
 import Items from './component/items'
 function App() {
-  const [UserData, setData] = useState([]);
+  let [UserData, setData] = useState([]);
   const Products=(data)=>{
 
       setData((pdata) => {
         return [...pdata, data];
       });
-  
-      console.log(UserData);
-console.log(data)
 }
 const delhandler=(idToDelete)=>{
-// UserData.filter(e=>{
-//   if (e.orderid !== data.orderid) {return e;}
-// })
-UserData = UserData.filter(item => item.id !== idToDelete);
+UserData = UserData.filter(item => { 
+  return item.orderid !== idToDelete})
+setData(UserData)
+localStorage.removeItem(idToDelete)
 }
   return (
     <>
